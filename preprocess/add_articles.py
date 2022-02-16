@@ -27,7 +27,7 @@ def read_jsonl(path):
 def write_jsonl(data, path):
 	with open(path, 'w') as f:
 		for example in data:
-			json_data = json.dumps(example)
+			json_data = json.dumps(example, ensure_ascii=False)
 			f.write(json_data + '\n')
 
 
@@ -73,5 +73,5 @@ if __name__ == '__main__':
 						t_replace_text += f': \"{a_text}\"'
 				tweet_text = tweet_text.replace(t_url, t_replace_text)
 			tweet['full_text'] = tweet_text
-			f.write(json.dumps(tweet) + '\n')
+			f.write(json.dumps(tweet) + '\n', ensure_ascii=False)
 	print('Done!')

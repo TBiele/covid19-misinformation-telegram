@@ -88,7 +88,7 @@ def read_jsonl(path):
 def write_jsonl(data, path):
 	with open(path, 'w') as f:
 		for example in data:
-			json_data = json.dumps(example)
+			json_data = json.dumps(example, ensure_ascii=False)
 			f.write(json_data + '\n')
 
 
@@ -115,6 +115,6 @@ if __name__ == '__main__':
 	with open(args.output_path, 'w') as f:
 		with Pool(processes=8) as p:
 			for tweet_id, tweet in tqdm(p.imap_unordered(parse_tweet, tweets.items()), total=len(tweets)):
-				f.write(json.dumps(tweet) + '\n')
+				f.write(json.dumps(tweet) + '\n', ensure_ascii=False)
 
 	print('Done!')

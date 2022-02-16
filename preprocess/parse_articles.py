@@ -43,7 +43,7 @@ def parse_article(article_dict):
 			'authors': authors,
 			'summary': summary
 		}
-		parsed_article = json.dumps(parsed_article)
+		parsed_article = json.dumps(parsed_article, ensure_ascii=False)
 	except:
 		parsed_article = None
 	return parsed_article
@@ -64,7 +64,7 @@ def read_jsonl_generator(path):
 def write_jsonl(data, path):
 	with open(path, 'w') as f:
 		for example in data:
-			json_data = json.dumps(example)
+			json_data = json.dumps(example, ensure_ascii=False)
 			f.write(json_data + '\n')
 
 

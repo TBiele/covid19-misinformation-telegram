@@ -21,7 +21,7 @@ def download_article(url):
 		article = Article(url, config=config)
 		article.download()
 		article_html = article.html
-		article_text = json.dumps({'url': url, 'article_html': article_html})
+		article_text = json.dumps({'url': url, 'article_html': article_html}, ensure_ascii=False)
 	except:
 		article_text = None
 	return url, article_text
@@ -56,7 +56,7 @@ def read_jsonl_generator(path):
 def write_jsonl(data, path):
 	with open(path, 'w') as f:
 		for example in data:
-			json_data = json.dumps(example)
+			json_data = json.dumps(example, ensure_ascii=False)
 			f.write(json_data + '\n')
 
 
