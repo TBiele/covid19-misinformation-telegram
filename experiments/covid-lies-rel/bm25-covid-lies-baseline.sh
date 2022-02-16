@@ -4,7 +4,7 @@ DATASET=covid-lies
 DATASET_PATH=data/${DATASET}
 NUM_SPLITS=5
 
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.7.10-0.fc30.x86_64/
+# export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.7.10-0.fc30.x86_64/
 
 #mkdir ${DATASET_PATH}/misinfo-index-data
 #
