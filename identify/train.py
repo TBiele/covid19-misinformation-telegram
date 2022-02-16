@@ -50,7 +50,7 @@ if __name__ == '__main__':
 	checkpoint_path = os.path.join(save_directory, 'pytorch_model.bin')
 
 	if not os.path.exists(save_directory):
-		os.mkdir(save_directory)
+		os.makedirs(save_directory)
 
 	# export TPU_IP_ADDRESS=10.155.6.34
 	# export XRT_TPU_CONFIG="tpu_worker;0;$TPU_IP_ADDRESS:8470"

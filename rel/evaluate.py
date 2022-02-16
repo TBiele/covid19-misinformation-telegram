@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
 	save_directory = os.path.join(args.save_directory, args.model_name)
 	if not os.path.exists(save_directory):
-		os.mkdir(save_directory)
+		os.makedirs(save_directory)
 
 	checkpoint_path = os.path.join(save_directory, 'pytorch_model.bin')
 	results_path = os.path.join(save_directory, 'results.json')

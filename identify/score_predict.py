@@ -56,7 +56,7 @@ if __name__ == '__main__':
 	pred_path = os.path.join(save_directory, 'predictions.jsonl')
 
 	if not os.path.exists(save_directory):
-		os.mkdir(save_directory)
+		os.makedirs(save_directory)
 
 	for handler in logging.root.handlers[:]:
 		logging.root.removeHandler(handler)
