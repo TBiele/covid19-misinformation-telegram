@@ -223,7 +223,7 @@ if __name__ == '__main__':
 			default_root_dir=save_directory,
 			max_epochs=0,
 			precision=precision,
-			distributed_backend=backend,
+			strategy=backend,
 			deterministic=deterministic,
 			checkpoint_callback=False,
 		)
