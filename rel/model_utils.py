@@ -35,7 +35,7 @@ class CovidTwitterMisinfoModel(pl.LightningModule):
 
 		if self.predict_mode:
 			if not os.path.exists(self.predict_path):
-				os.mkdir(self.predict_path)
+				os.makedirs(self.predict_path)
 
 		self.load_pretrained = load_pretrained
 		if self.predict_mode or self.load_pretrained:
