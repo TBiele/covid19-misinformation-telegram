@@ -232,7 +232,7 @@ if __name__ == '__main__':
 			default_root_dir=save_directory,
 			max_epochs=args.epochs,
 			precision=precision,
-			distributed_backend=backend,
+			strategy=backend,
 			gradient_clip_val=args.gradient_clip_val,
 			deterministic=deterministic,
 			checkpoint_callback=False,
