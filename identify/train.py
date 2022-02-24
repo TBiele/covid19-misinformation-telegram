@@ -374,7 +374,7 @@ if __name__ == '__main__':
 			max_epochs=args.epochs,
 			precision=precision,
 			deterministic=deterministic,
-			checkpoint_callback=False,
+			enable_checkpointing=False,
 		)
 	else:
 		if len(gpus) > 1:
@@ -390,7 +390,7 @@ if __name__ == '__main__':
 			strategy=backend,
 			gradient_clip_val=args.gradient_clip_val,
 			deterministic=deterministic,
-			checkpoint_callback=False,
+			enable_checkpointing=False,
 		)
 	try:
 		logging.info('Training...')

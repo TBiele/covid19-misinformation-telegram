@@ -190,7 +190,7 @@ if __name__ == '__main__':
 			max_epochs=0,
 			precision=precision,
 			deterministic=deterministic,
-			checkpoint_callback=False,
+			enable_checkpointing=False,
 		)
 	else:
 		if len(gpus) > 1:
@@ -205,14 +205,14 @@ if __name__ == '__main__':
 			precision=precision,
 			strategy=backend,
 			deterministic=deterministic,
-			checkpoint_callback=False,
+			enable_checkpointing=False,
 		)
 
 	logging.info('Evaluating...')
 	try:
 		results = trainer.test(
 			model,
-			test_dataloaders=[
+			dataloaders=[
 				val_entity_data_loader,
 				val_rel_data_loader,
 				test_entity_data_loader,
