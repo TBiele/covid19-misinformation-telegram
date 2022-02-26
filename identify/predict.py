@@ -210,7 +210,7 @@ if __name__ == '__main__':
 			max_epochs=0,
 			precision=precision,
 			deterministic=deterministic,
-			enable_checkpointing=False,
+			checkpoint_callback=False,
 		)
 	else:
 		if len(gpus) > 1:
@@ -225,7 +225,7 @@ if __name__ == '__main__':
 			precision=precision,
 			strategy=backend,
 			deterministic=deterministic,
-			enable_checkpointing=False,
+			checkpoint_callback=False,
 		)
 
 	logging.info('Predicting...')

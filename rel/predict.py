@@ -151,7 +151,7 @@ if __name__ == '__main__':
 			max_epochs=0,
 			precision=precision,
 			deterministic=deterministic,
-			enable_checkpointing=False,
+			checkpoint_callback=False,
 		)
 	else:
 		if len(gpus) > 1:
@@ -166,11 +166,11 @@ if __name__ == '__main__':
 			precision=precision,
 			strategy=backend,
 			deterministic=deterministic,
-			enable_checkpointing=False,
+			checkpoint_callback=False,
 		)
 
 	logging.info('Predicting...')
 	try:
-		trainer.test(model, dataloaders=[val_rel_data_loader, val_entity_data_loader])
+		trainer.test(model, test_dataloaders=[val_rel_data_loader, val_entity_data_loader])
 	except Exception as e:
 		logging.exception('Exception during predicting', exc_info=e)
