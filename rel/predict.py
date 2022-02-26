@@ -164,7 +164,7 @@ if __name__ == '__main__':
 			default_root_dir=save_directory,
 			max_epochs=0,
 			precision=precision,
-			strategy=backend,
+			distributed_backend=backend,
 			deterministic=deterministic,
 			checkpoint_callback=False,
 		)
