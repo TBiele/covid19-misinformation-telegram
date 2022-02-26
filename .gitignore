@@ -1,6 +1,5 @@
 configs/*
 data/*
-models/*
 private/*
 results/*
 saved_models/*
