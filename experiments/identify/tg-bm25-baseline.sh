@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-DATASET=my_v1
+DATASET=my_data_set_name
 DATASET_PATH=data/${DATASET}
-# export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 
 mkdir ${DATASET_PATH}/misinfo-index-data
 

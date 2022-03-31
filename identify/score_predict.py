@@ -42,7 +42,7 @@ if __name__ == '__main__':
 	parser.add_argument('-tsp', '--train_score_path', default='data/scores.json')
 	parser.add_argument('-vsp', '--val_score_path', default='data/scores.json')
 	parser.add_argument('-sd', '--save_directory', default='models')
-	parser.add_argument('-mn', '--model_name', default='covid-twitter-v2-bertscore')
+	parser.add_argument('-mn', '--model_name', default='smanjil/German-MedBERT')
 	parser.add_argument('-mip', '--misinfo_path', default=None)
 	parser.add_argument('-th', '--threshold', default=None, type=float)
 	parser.add_argument('-tm', '--threshold_min', default=0.0, type=float)

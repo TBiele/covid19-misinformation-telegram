@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-DATASET=my_v1
+DATASET=my_data_set_name
 DATASET_PATH=data/${DATASET}
+MODEL_NAME=smanjil/German-MedBERT
 
 python preprocess/run_bert_score.py \
     --input_path ${DATASET_PATH}/train.jsonl \
@@ -28,7 +29,7 @@ python identify/score_predict.py \
   --train_path ${DATASET_PATH}/train.jsonl \
   --val_path ${DATASET_PATH}/dev.jsonl \
   --misinfo_path ${DATASET_PATH}/misinfo.json \
-  --model_name covid-twitter-v2-bertscore \
+  --model_name ${MODEL_NAME}-bertscore \
   --train_score_path ${DATASET_PATH}/train-bert-scores.json\
   --val_score_path ${DATASET_PATH}/dev-bert-scores.json
 

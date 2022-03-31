@@ -35,10 +35,8 @@ if __name__ == '__main__':
 	parser.add_argument('-m', '--misinfo_path', required=True)
 	parser.add_argument('-gpu', '--device', default='cuda:0')
 	parser.add_argument('-mtt', '--misinfo_text_type', default='text')
-	# best results from COVIDLies paper
-	parser.add_argument('-mt', '--model_type', default='digitalepidemiologylab/covid-twitter-bert-v2')
-	# decided for bert-large-uncased by BERTScore library experiments
-	parser.add_argument('-ml', '--num_layers', default=18, type=int)
+	parser.add_argument('-mt', '--model_type', default='smanjil/German-MedBERT')
+	parser.add_argument('-ml', '--num_layers', default=12, type=int)
 	parser.add_argument('-bs', '--batch_size', default=128, type=int)
 	parser.add_argument('-mlp', '--max_length_percentile', default=95, type=int)
 	parser.add_argument('-s', '--seed', default=0, type=int)
@@ -69,7 +67,8 @@ if __name__ == '__main__':
 		num_layers=args.num_layers,
 		device=args.device
 	)
-	max_chars = int(np.percentile([len(t['full_text']) for t in tweets], args.max_length_percentile))
+	# max_chars = int(np.percentile([len(t['full_text']) for t in tweets], args.max_length_percentile))
+	max_chars = 1000
 
 	print(f'{args.max_length_percentile}-percentile tweet character length: {max_chars}')
 	scores = {}
