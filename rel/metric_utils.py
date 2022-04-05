@@ -112,7 +112,10 @@ def find_mr_thresholds(emb_model, entities, relations, m_examples, m_entities, t
 			m_label = 1 if m_id in t_labels[t_id] else 0
 			p_e_embs = []
 			for pos_t_id in pos_t_ids:
-				p_e_emb = m_entities[pos_t_id]
+				try:
+					p_e_emb = m_entities[pos_t_id]
+				except KeyError:
+					raise Exception(f"KeyError for MisT id {m_id}. The problem may be that you need to add at least one example of this MisT to dev.jsonl and test.jsonl.")
 				p_e_embs.append(p_e_emb)
 			p_e_embs = torch.stack(p_e_embs, dim=0)
 			p_es = emb_model.energy(
