@@ -35,7 +35,7 @@ if __name__ == '__main__':
 	parser.add_argument('-m', '--misinfo_path', required=True)
 	parser.add_argument('-gpu', '--device', default='cuda:0')
 	parser.add_argument('-mtt', '--misinfo_text_type', default='text')
-	parser.add_argument('-mt', '--model_type', default='smanjil/German-MedBERT')
+	parser.add_argument('-mt', '--model_type', default='digitalepidemiologylab/covid-twitter-bert-v2')
 	parser.add_argument('-ml', '--num_layers', default=12, type=int)
 	parser.add_argument('-bs', '--batch_size', default=128, type=int)
 	parser.add_argument('-mlp', '--max_length_percentile', default=95, type=int)

@@ -8,6 +8,7 @@ python preprocess/run_bert_score.py \
     --input_path ${DATASET_PATH}/train.jsonl \
     --misinfo_path ${DATASET_PATH}/misinfo.json \
     --output_path ${DATASET_PATH}/train-bert-scores.json \
+    --model_type ${MODEL_NAME} \
     --device cuda:0 \
     --batch_size 1
 
@@ -15,6 +16,7 @@ python preprocess/run_bert_score.py \
     --input_path ${DATASET_PATH}/dev.jsonl \
     --misinfo_path ${DATASET_PATH}/misinfo.json \
     --output_path ${DATASET_PATH}/dev-bert-scores.json \
+    --model_type ${MODEL_NAME} \
     --device cuda:0 \
     --batch_size 32
 

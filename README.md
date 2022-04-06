@@ -41,3 +41,15 @@ Annotated tweet ids and misinformation targets for *CoVaxLies* v1 can be found i
 You will need to use the Twitter API to download the text of these tweets, as we cannot directly provide this info.
 Stance annotations from *CoVaxLies* v2 have additionally been provided, all tweets annotated with Agree, Disagree, and No Stance
 are Relevant.
+
+# Tips for Using the Code
+## Setup
+- python -m venv venv
+- . venv/bin/activate
+- pip install -r requirements.txt
+- Add data/ directory and copy data set of tweets/messages to subdirectory (e. g. v1)
+- Run `bash experiments/.../file_name.sh` (after setting the necessary parameters such as DATASET)
+
+## Model Training
+- Currently the code only works with older versions of pytorch-lightning (see requirements.txt)
+- When using MISINFO_EVAL_MODE=all, dev.jsonl and train.jsonl need to contain at least one example for each target class
