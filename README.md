@@ -1,10 +1,3 @@
-# Setup
-- python -m venv venv
-- . venv/bin/activate
-- pip install -r requirements.txt
-- Add data/ directory and copy data set of tweets/messages to subdirectory (e. g. v1)
-- Run `bash experiments/.../file_name.sh`
-
 # *CoVaxLies v1*: Automatic Detection of COVID-19 Vaccine Misinformation with Graph Link Prediction
 
 This repository contains the code and annotations utilized in the following research paper:
